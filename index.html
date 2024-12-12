@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Gift Card Offer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .menu-button {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            height: 100vh;
+            position: relative;
+        }
+
+        .hero img {
+            max-width: 300px;
+            animation: bounce 2s infinite;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #fff;
+            text-shadow: 2px 2px 8px #000;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        .claim-button {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        .claim-button:hover {
+            background-color: #f57c00;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            margin-top: 30px;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .review-item {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .claim-button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="menu-button" onclick="window.location.href='#'">☰</div>
+        <div>Amazon Gift Card</div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="https://i.ibb.co/HXBVDfP/aecbb58bfded.png" alt="Amazon Gift Card">
+        <h1>Get Your $1000 Amazon Gift Card!</h1>
+        <p>Limited time offer. Hurry up and claim your gift card now!</p>
+        <button class="claim-button" onclick="window.location.href='https://go4affm.com/c/?p=41639&o=20854&s1=roisul'">Claim Now</button>
+        <div class="countdown" id="countdown"></div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews">
+        <h2>What Our Users Say</h2>
+        <div class="review-item">"Amazing deal! I got my gift card within minutes." - Sarah</div>
+        <div class="review-item">"Highly recommend! Easy and reliable." - John</div>
+        <div class="review-item">"This is legit, don't miss out!" - Maria</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Amazon Gift Card Promotion. All Rights Reserved.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Countdown Timer
+        const countdownElement = document.getElementById("countdown");
+        const targetDate = new Date().getTime() + 86400000; // 24 hours from now
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerText = `Offer Ends In: ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                countdownElement.innerText = "Offer Ended";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
